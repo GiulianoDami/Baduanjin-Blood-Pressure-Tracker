@@ -1,0 +1,37 @@
+{
+    "language": "Rust",
+    "dependency_file": "Cargo.toml",
+    "dependencies": ["clap", "rusqlite", "chrono", "plotters", "serde"],
+    "files": [
+        {
+            "path": "src/main.rs",
+            "description": "Entry point and CLI argument parsing",
+            "exports": ["fn main()", "struct CliArgs"]
+        },
+        {
+            "path": "src/database.rs",
+            "description": "Database operations for storing health data",
+            "exports": ["fn init_db()", "fn save_blood_pressure()", "fn save_exercise_session()"]
+        },
+        {
+            "path": "src/models.rs",
+            "description": "Data models for blood pressure and exercise records",
+            "exports": ["struct BloodPressureRecord", "struct ExerciseSession"]
+        },
+        {
+            "path": "src/visualization.rs",
+            "description": "Chart generation for tracking progress",
+            "exports": ["fn generate_bp_trend_chart()", "fn generate_exercise_frequency_chart()"]
+        },
+        {
+            "path": "src/cli_handler.rs",
+            "description": "Command-line interface logic",
+            "exports": ["fn handle_command()", "fn print_help()", "fn export_csv()"]
+        },
+        {
+            "path": "src/config.rs",
+            "description": "Application configuration and constants",
+            "exports": ["const DB_FILENAME", "const DEFAULT_REMINDER_TIME"]
+        }
+    ]
+}
