@@ -1,0 +1,11 @@
+[package]
+name = "baduanjin_blood_pressure_tracker"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.0.26", features = ["derive"] }
+rusqlite = "0.28.0"
+chrono = { version = "0.4.23", features = ["serde"] }
+plotters = "0.3.4"
+serde = { version = "1.0.152", features = ["derive"] }
